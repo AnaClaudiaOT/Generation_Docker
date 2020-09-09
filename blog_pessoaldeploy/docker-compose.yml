@@ -35,6 +35,16 @@ services:
       - db
     networks:
       - generation-network
+
+  blogpessoal:
+    image: nginx
+    volumes:
+    - ./blogpessoal/dist/blogpessoal-ui:/usr/share/nginx/html/
+    ports:
+    - "4200:80"
+    networks:
+      - generation-network
+
 networks:
     generation-network:
         driver: bridge
